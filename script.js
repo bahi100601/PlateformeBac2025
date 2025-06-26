@@ -1,9 +1,12 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbwW64Cu3peK1l08pA1h_5nOkw1G0JRU8blulAc4UOw5NMwrXhWMbJY2PPii_uQxWEa6/exec";
+// رابط Google Apps Script الذي نشرته كـ Web App (استبدل بالرابط الخاص بك إن تغيّر)
+const scriptURL = "https://script.google.com/macros/s/AKfycbwOUrAP7CvqodmTALm0giKPfgfUShXndkuipS4X4cvzCc235xVCCxceRLOArhU7yLjr/exec";
 
+// تأكد من تنفيذ الكود بعد تحميل الصفحة
 window.onload = function () {
   const form = document.getElementById("studForm");
   const msg = document.getElementById("statusMsg");
 
+  // ربط الأزرار بالدوال
   if (document.getElementById("addStud")) {
     document.getElementById("addStud").onclick = () => handleSubmit("add");
     document.getElementById("getStud").onclick = () => handleSubmit("get");
@@ -11,6 +14,8 @@ window.onload = function () {
     document.getElementById("editStud").onclick = () => handleSubmit("edit");
     document.getElementById("clearForm").onclick = clearForm;
   }
+
+  // دالة إرسال البيانات إلى Google Apps Script حسب العملية
   function handleSubmit(action) {
     const data = {
       action: action,
@@ -69,12 +74,19 @@ window.onload = function () {
         } else if (text === "DELETED") {
           msg.textContent = "تم حذف الطالب.";
           clearForm();
+        } else if (text.startsWith("ERROR")) {
+          msg.textContent = "خطأ: " + text;
         } else {
-          msg.textContent = "حدث خطأ: " + text;
+          msg.textContent = text;
         }
+      })
+      .catch(err => {
+        msg.textContent = "فشل الاتصال بالخادم: " + err;
+        console.error(err);
       });
   }
 
+  // أدوات مساعدة
   function get(id) {
     return document.getElementById(id).value.trim();
   }
