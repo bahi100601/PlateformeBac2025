@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbwOUrAP7CvqodmTALm0giKPfgfUShXndkuipS4X4cvzCc235xVCCxceRLOArhU7yLjr/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwW64Cu3peK1l08pA1h_5nOkw1G0JRU8blulAc4UOw5NMwrXhWMbJY2PPii_uQxWEa6/exec";
 
 window.onload = function () {
   const form = document.getElementById("studForm");
