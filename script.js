@@ -4,12 +4,13 @@ window.onload = function () {
   const form = document.getElementById("studForm");
   const msg = document.getElementById("statusMsg");
 
-  document.getElementById("addStud").onclick = () => handleSubmit("add");
-  document.getElementById("getStud").onclick = () => handleSubmit("get");
-  document.getElementById("delStud").onclick = () => handleSubmit("delete");
-  document.getElementById("editStud").onclick = () => handleSubmit("edit");
-  document.getElementById("clearForm").onclick = clearForm;
-
+  if (document.getElementById("addStud")) {
+    document.getElementById("addStud").onclick = () => handleSubmit("add");
+    document.getElementById("getStud").onclick = () => handleSubmit("get");
+    document.getElementById("delStud").onclick = () => handleSubmit("delete");
+    document.getElementById("editStud").onclick = () => handleSubmit("edit");
+    document.getElementById("clearForm").onclick = clearForm;
+  }
   function handleSubmit(action) {
     const data = {
       action: action,
