@@ -1,5 +1,5 @@
 // رابط Google Apps Script الذي نشرته كـ Web App (استبدل بالرابط الخاص بك إن تغيّر)
-const scriptURL = "https://script.google.com/macros/s/AKfycbzJBZIDHIZHTQZeEr_EaSUUSyBGNAJgh1hIKNWjOf2gVma6GQinQ-mG3Wd1gVpFZ42Sgg/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwfgFcJoeD1-RDs_iuioKst_RJEYZqM80QrvJqEm0QQDcnGb34ERHaikhKLmhBVPhtd/exec";
 
 // تأكد من تنفيذ الكود بعد تحميل الصفحة
 window.onload = function () {
